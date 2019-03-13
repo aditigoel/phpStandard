@@ -1,0 +1,804 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel with user endApi's",
+        "description": "Swagger creates human-readable documentation for your APIs.",
+        "version": "3.0"
+    },
+    "host": "server.backenduser.com",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/blockunblock/blockedUser": {
+            "post": {
+                "tags": [
+                    "BlockUnblock"
+                ],
+                "summary": "block User",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "blocked_to",
+                        "in": "formData",
+                        "description": "enter user id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/blockunblock/getBlockedUser": {
+            "get": {
+                "tags": [
+                    "BlockUnblock"
+                ],
+                "summary": "Get all block users with search functionality with q parameter",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "enter any user name in q parameter for search specific blocked user",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/blockunblock/unblockedUser": {
+            "post": {
+                "tags": [
+                    "BlockUnblock"
+                ],
+                "summary": "unblock  User",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "blocked_to",
+                        "in": "formData",
+                        "description": "enter user id",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/reportUser/reportUser": {
+            "post": {
+                "tags": [
+                    "Report User"
+                ],
+                "summary": "report User",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "reported_to",
+                        "in": "formData",
+                        "description": "enter user id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "reason",
+                        "in": "formData",
+                        "description": "enter reason",
+                        "type": "string"
+                    },
+                    {
+                        "name": "comment",
+                        "in": "formData",
+                        "description": "enter comment",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/reportUser/getReportedUser": {
+            "get": {
+                "tags": [
+                    "Report User"
+                ],
+                "summary": "Get all reported users with search functionality with q parameter",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "enter any user name in q parameter for search specific blocked user",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/reportUser/unReportUser": {
+            "post": {
+                "tags": [
+                    "Report User"
+                ],
+                "summary": "un Repor User",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "reported_to",
+                        "in": "formData",
+                        "description": "enter user id",
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/settings/settingsOnOff": {
+            "post": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "push notification on off",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "push_notification",
+                        "in": "formData",
+                        "description": "0 for OFF and 1 for ON",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/settings/getPages": {
+            "get": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "Get page information",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "meta_key",
+                        "in": "query",
+                        "description": "for about us page meta_key = about_us, for terms and conditions meta_key = term, for privacy policy meta_key=privacy_policy",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/settings/contactUs": {
+            "post": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "contact us page",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "message",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "subject",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/settings/changeEmail": {
+            "post": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "change email",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "old_email",
+                        "in": "formData",
+                        "description": "old email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new_email",
+                        "in": "formData",
+                        "description": "new email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new_email_confirmation",
+                        "in": "formData",
+                        "description": "new email confirmation",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/settings/changePassword": {
+            "post": {
+                "tags": [
+                    "Settings"
+                ],
+                "summary": "Change Password",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "old_password",
+                        "in": "formData",
+                        "description": "old password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new_password",
+                        "in": "formData",
+                        "description": "new password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "new_password_confirmation",
+                        "in": "formData",
+                        "description": "new password confirmation",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/user/signUp": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "signUp",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password_confirmation",
+                        "in": "formData",
+                        "description": "password_confirmation",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/user/socialLogin": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "socialLogin",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_type",
+                        "in": "formData",
+                        "description": "Please enter (IOS / ANDROID) ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "signup_type",
+                        "in": "formData",
+                        "description": "Please enter (facebook / gmail) ",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "social_id",
+                        "in": "formData",
+                        "description": "Please enter social id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "Please enter image path",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "login",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_type",
+                        "in": "formData",
+                        "description": "IOS/ANDROID",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device_id",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/user/resendVerification": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "resendVerification",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/user/forgotPassword": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "forgotPassword",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

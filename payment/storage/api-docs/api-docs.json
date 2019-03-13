@@ -1,0 +1,810 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel with payment using mangopay",
+        "description": "Swagger creates human-readable documentation for your APIs.",
+        "version": "3.0"
+    },
+    "host": "oistarzpayment.ignivastaging.com",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/mangopay/createAccount": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "create user account on mango pay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/createWallet": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "create user wallet on mango pay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/getUserWallet": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "get user wallets",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/viewWallet": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "get notifications of a user",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "wallet_id",
+                        "in": "query",
+                        "description": "Enter Authorization Token",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/addCard": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "add user cards on mangopay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "card_number",
+                        "in": "formData",
+                        "description": "Card number",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "expire_month",
+                        "in": "formData",
+                        "description": "Expire month",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "expire_year",
+                        "in": "formData",
+                        "description": "Expire year",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "cvv",
+                        "in": "formData",
+                        "description": "Cvv",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/getUserCards": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "get notifications of a user",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/deleteCard": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "delete user cards on mangopay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "card_id",
+                        "in": "formData",
+                        "description": "Card id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/createBank": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "create user wallet on mango pay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "formData",
+                        "description": "Bank account type(IBAN/US/CA/GB/OTHER)",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "tag",
+                        "in": "formData",
+                        "description": "Enter any description",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "addressline1",
+                        "in": "formData",
+                        "description": "Addressline1",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "addressline2",
+                        "in": "formData",
+                        "description": "Addressline1",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "city",
+                        "in": "formData",
+                        "description": "City",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "region",
+                        "in": "formData",
+                        "description": "Region",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "postal_code",
+                        "in": "formData",
+                        "description": "Postal Code",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "country",
+                        "in": "formData",
+                        "description": "Country (Like - FR, DK etc)",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "owner_name",
+                        "in": "formData",
+                        "description": "Bank account owner",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "iban",
+                        "in": "formData",
+                        "description": "Bank IBAN number",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "bic",
+                        "in": "formData",
+                        "description": "BIC of bank account",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "account_number",
+                        "in": "formData",
+                        "description": "Bank account number",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "aba",
+                        "in": "formData",
+                        "description": "ABA of Bank account",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "deposit_account_type",
+                        "in": "formData",
+                        "description": "The type of account",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "branch_code",
+                        "in": "formData",
+                        "description": "Bank branch code",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "institution_number",
+                        "in": "formData",
+                        "description": "Bank account institution number",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "bank_name",
+                        "in": "formData",
+                        "description": "Bank name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sort_code",
+                        "in": "formData",
+                        "description": "Sort code of bank account",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/deleteBankAccount": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "delete user bank account on mangopay",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "bank_id",
+                        "in": "formData",
+                        "description": "Bank Id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/getUserBankAccount": {
+            "get": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "get user all bank accounts",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/createDirectPayIn": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "debit amount from customer card and save into customer wallet",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "debit_user_mangopay_id",
+                        "in": "formData",
+                        "description": "payer user mangopay user id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "debited_user_id",
+                        "in": "formData",
+                        "description": "payer user  id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "credited_user_mangopay_id",
+                        "in": "formData",
+                        "description": "payee user mangopay id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "credited_user_id",
+                        "in": "formData",
+                        "description": "payee user  id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "discount",
+                        "in": "formData",
+                        "description": "discount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "charge",
+                        "in": "formData",
+                        "description": "charge",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "formData",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "fee_amount",
+                        "in": "formData",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "formData",
+                        "description": "currency",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "invitation_id",
+                        "in": "formData",
+                        "description": "invitation_id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "card_id",
+                        "in": "formData",
+                        "description": "card id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "payerWallet",
+                        "in": "formData",
+                        "description": "card id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "payeeWallet",
+                        "in": "formData",
+                        "description": "card id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/mangopay/releasePayment": {
+            "post": {
+                "tags": [
+                    "Payments"
+                ],
+                "summary": "release payment from customer wallet to artist wallet and admin with discount & charge calculation and genrate invoice and transcations",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Authorization Token",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "debit_user_mangopay_id",
+                        "in": "formData",
+                        "description": "payer user mangopay user id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "debited_user_id",
+                        "in": "formData",
+                        "description": "payer user  id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "credited_user_mangopay_id",
+                        "in": "formData",
+                        "description": "payee user mangopay id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "credited_user_id",
+                        "in": "formData",
+                        "description": "payee user  id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "discount",
+                        "in": "formData",
+                        "description": "discount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "charge",
+                        "in": "formData",
+                        "description": "charge",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "formData",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "fee_amount",
+                        "in": "formData",
+                        "description": "amount",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "formData",
+                        "description": "currency",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "invitation_id",
+                        "in": "formData",
+                        "description": "invitation_id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "payerWallet",
+                        "in": "formData",
+                        "description": "card id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "payeeWallet",
+                        "in": "formData",
+                        "description": "card id",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

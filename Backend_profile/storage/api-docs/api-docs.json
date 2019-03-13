@@ -1,0 +1,169 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel with user endApi's",
+        "description": "Swagger creates human-readable documentation for your APIs.",
+        "version": "3.0"
+    },
+    "host": "server.profileservice.com/",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/profile/uploadProfileImage": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "uploadProfileImage",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "description": "Enter user_id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "description": "image",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/profile/getPersonalProfile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "getPersonalProfile",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "Enter user_id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "description": "Enter role_id",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/profile/updatePersonalProfile": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "updatePersonalProfile",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "description": "Enter user_id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "address",
+                        "in": "formData",
+                        "description": "address",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lat",
+                        "in": "formData",
+                        "description": "lat",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "lng",
+                        "in": "formData",
+                        "description": "lng",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

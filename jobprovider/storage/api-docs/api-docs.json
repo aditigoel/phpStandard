@@ -1,0 +1,343 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel with job portal ",
+        "description": "Swagger creates human-readable documentation for your APIs.",
+        "version": "3.0"
+    },
+    "host": "server.jobprovider.com",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/pro-jobs/add": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "add job",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "description": "title",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "description": "description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "start_date_time",
+                        "in": "formData",
+                        "description": "start date time",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end_date_time",
+                        "in": "formData",
+                        "description": "end date time",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/pro-jobs/edit": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "edit job",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "job_id",
+                        "in": "formData",
+                        "description": "job id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "description": "title",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "description": "description",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "start_date_time",
+                        "in": "formData",
+                        "description": "start date time",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "end_date_time",
+                        "in": "formData",
+                        "description": "end date time",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/pro-jobs/delete": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "delete job",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "job_id",
+                        "in": "formData",
+                        "description": "job id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/pro-jobs/getSingleJob": {
+            "get": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "get Single Job",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "job_id",
+                        "in": "query",
+                        "description": "job id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/pro-jobs/getAllJobs": {
+            "get": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "Get all jobs",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "owner",
+                        "in": "query",
+                        "description": "send 'me' or 'other' or 'all'",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/pro-jobs/invite-job": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "invite job",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Enter Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "formData",
+                        "description": "Enter user_id",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "pro_job_id",
+                        "in": "formData",
+                        "description": "Enter job_id",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Failed"
+                    },
+                    "405": {
+                        "description": "Undocumented data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
